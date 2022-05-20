@@ -15,13 +15,16 @@ os.system('cls' if os.name == 'nt' else 'clear')
 
 #Formatando Json recebido
 container = request.json()
-content = (container[0])
-meaning = content["meanings"]
-comp = meaning[0]
 
-#formatando saída
-format = word.upper()
-print('=' * 5, format, "=" * 5)
-print('Significado: ' + comp)
+try:
+	content = (container[0])
+except KeyError:
+	print('Desculpe, não encontramos sua palavra :/')
+else:
+	meaning = content["meanings"]
+	comp = meaning[0]
+	format = word.upper()
+	print('=' * 5, format, "=" * 5)
+	print('Significado: ' + comp)
 
 
