@@ -13,7 +13,7 @@ def clean():
 clean()
 #Requisitando a palavra na API
 while True:
-	word = input('Palavra: ')
+	word = input('Palavra: ').lower()
 	request = requests.get('https://significado.herokuapp.com/v2/'+word)
 
 	clean()
